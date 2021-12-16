@@ -20,15 +20,6 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 	@Autowired
 	private CustomAuthenticationProvider customAuthenticationProvider;
 
-//	@Override
-//	protected void configure(AuthenticationManagerBuilder auth) throws Exception {
-//		auth
-//		.inMemoryAuthentication()
-//		.withUser("victor")
-//		.password("{noop}oladipo")
-//		.roles("USER");
-//	}
-
 	/* DB에서 user 조회 */
 	@Override
 	protected void configure(AuthenticationManagerBuilder auth) throws Exception {

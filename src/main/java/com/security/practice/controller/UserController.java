@@ -16,10 +16,8 @@ public class UserController {
 
     private UserService userService;
 
-//    @PreAuthorize("#oauth2.hasScope('write')")
-//    @PreAuthorize("hasAuthority('ROLE_ADMIN')")
-    @PreAuthorize("hasPermission('test','write')")
 //    @PreAuthorize("hasPermission(#name,'test','write')")
+    @PreAuthorize("hasPermission('test','write')")
     @GetMapping("/users")
     public String findAllUser(Principal user) {
         return user.getName();

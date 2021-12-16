@@ -17,15 +17,15 @@ public class User implements UserDetails {
 	 */
 	private static final long serialVersionUID = 1L;
 
-	private Long id;
-	private String name;
+	private String username;
 	private String password;
-	private String authorites;
+//	private String authorites;
+	private Long roleGroupId;
 
 	@Override
 	public String getUsername() {
 		// TODO Auto-generated method stub
-		return name;
+		return username;
 	}
 
 	@Override
@@ -55,9 +55,15 @@ public class User implements UserDetails {
 	@Override
 	public Collection<? extends GrantedAuthority> getAuthorities() {
 		// TODO Auto-generated method stub
-		ArrayList<GrantedAuthority> authList = new ArrayList<GrantedAuthority>();
-		authList.add(new SimpleGrantedAuthority(authorites));
-		return authList;
+		return null;
 	}
+
+//	@Override
+//	public Collection<? extends GrantedAuthority> getAuthorities() {
+//		// TODO Auto-generated method stub
+//		ArrayList<GrantedAuthority> authList = new ArrayList<GrantedAuthority>();
+//		authList.add(new SimpleGrantedAuthority(authorites));
+//		return authList;
+//	}
 
 }

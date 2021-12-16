@@ -43,7 +43,7 @@ public class CustomAuthenticationProvider implements AuthenticationProvider {
         	throw new BadCredentialsException("찾으시는 아이디가 없습니다.");
         }
 
-        log.info("username =====>" + username + "," + findUser.getName());
+        log.info("username =====>" + username + "," + findUser.getUsername());
         log.info("password =====>" + password + "," + findUser.getPassword());
 
         if(!passwordEncoder.matches(password, findUser.getPassword())) {
@@ -51,7 +51,8 @@ public class CustomAuthenticationProvider implements AuthenticationProvider {
         }
 
        List<GrantedAuthority> authorityList = new ArrayList<>();
-        authorityList.add(new SimpleGrantedAuthority(findUser.getAuthorites()));
+//        authorityList.add(new SimpleGrantedAuthority(findUser.getAuthorites()));
+//        return new UsernamePasswordAuthenticationToken(username, password, authorityList);
         return new UsernamePasswordAuthenticationToken(username, password, authorityList);
     }
 
