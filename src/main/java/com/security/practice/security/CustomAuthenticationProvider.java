@@ -38,6 +38,11 @@ public class CustomAuthenticationProvider implements AuthenticationProvider {
         String password = authentication.getCredentials().toString();
 
         User findUser = userService.findByPk(username);
+
+        if(findUser == null) {
+        	throw new BadCredentialsException("찾으시는 아이디가 없습니다.");
+        }
+
         log.info("username =====>" + username + "," + findUser.getName());
         log.info("password =====>" + password + "," + findUser.getPassword());
 

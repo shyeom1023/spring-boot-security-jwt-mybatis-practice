@@ -17,7 +17,9 @@ public class UserService implements UserMapper {
 	@Override
 	public User findByPk(String username) {
 
-		return userMapper.findByPk(username);
+		User user = userMapper.findByPk(username);
+
+		return user;
 	}
 
 }

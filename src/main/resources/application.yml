@@ -12,7 +12,14 @@ mybatis:
 logging:
   level: 
     com.security.practice.repository : trace
+security:
+  oauth2:
+    resource:
+      token-info-uri: http://localhost:8080/oauth/check_token
+    authorization:
+      check-token-access: isAthenticated()
 server:
   port: 8080
+
     
   
