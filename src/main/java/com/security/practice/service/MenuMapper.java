@@ -8,5 +8,6 @@ import com.security.practice.model.dto.Menu;
 public interface MenuMapper {
 
 	public Menu findByName(String menuName);
+	public Menu findByMenuPath(String menuPath);
 
 }

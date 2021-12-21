@@ -8,6 +8,10 @@ import lombok.Setter;
 public class Menu {
 
 	private Long id;
-	private String name;
+	private Long menuId;
+	private Long parentMenuId;
+	private String menuPath;
+	private String menuName;
+	private int menuOrder;
 
 }

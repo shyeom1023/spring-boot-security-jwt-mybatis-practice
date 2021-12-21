@@ -20,4 +20,10 @@ public class MenuService implements MenuMapper {
 		return menuMapper.findByName(menuName);
 	}
 
+	@Override
+	public Menu findByMenuPath(String menuPath) {
+		// TODO Auto-generated method stub
+		return menuMapper.findByMenuPath(menuPath);
+	}
+
 }

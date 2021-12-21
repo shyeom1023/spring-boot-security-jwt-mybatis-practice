@@ -14,7 +14,7 @@ public class SecurityPracticeApplication {
 		SpringApplication.run(SecurityPracticeApplication.class, args);
 
 		PasswordEncoder passwordEncoder = PasswordEncoderFactories.createDelegatingPasswordEncoder();
-		System.out.println("endcode = " + passwordEncoder.encode("oladipo"));
+		System.out.println("endcode = " + passwordEncoder.encode("duatjrgus1"));
 	}
 
 }
