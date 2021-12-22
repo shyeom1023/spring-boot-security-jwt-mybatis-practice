@@ -37,6 +37,7 @@ public class ClientPermissionExpression implements PermissionEvaluator {
     public boolean hasPermission(Authentication authentication, Object targetDomainObject, Object permission) {
         // 적절한 권한 관리 코드
 
+    	log.info("authentication => " + authentication.getName());
     	User user = userService.findByPk(authentication.getName());
     	Menu menu = menuService.findByMenuPath(targetDomainObject.toString());
     	RoleGroupDetails roleGroupDetails = roleGroupDetailsService.findByRoleGroupIdAndMenuId(user.getRoleGroupId(), menu.getMenuId());

@@ -43,21 +43,12 @@ public class SwaggerConfig {
 				.securityContexts(Arrays.asList(securityContext()))
 				.securitySchemes(apiKey())
 				.select()
-//				.apis(RequestHandlerSelectors.any())
-//				.paths(PathSelectors.any())
 //				.paths(PathSelectors.any())
 				.paths(PathSelectors.ant("/v1/**"))
 				.apis(RequestHandlerSelectors.any())
 				.build()
 				.apiInfo(apiInfo())
 				.useDefaultResponseMessages(false)
-				.ignoredParameterTypes(
-						WebRequest.class,
-						HttpServletRequest.class,
-						HttpServletResponse.class,
-						HttpSession.class,
-						Principal.class,
-						Locale.class)
 				.enable(true);
 	}
 

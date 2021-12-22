@@ -18,6 +18,8 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 	@Autowired
 	private CustomAuthenticationProvider customAuthenticationProvider;
 
+
+
 	/* DB에서 user 조회 */
 	@Override
 	protected void configure(AuthenticationManagerBuilder auth) throws Exception {
@@ -33,14 +35,18 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 				.headers()
 				.frameOptions()
 				.disable()
-//				.and()
-//				.authorizeRequests()
-//				.antMatchers("/oauth/**", "/oauth2/callback")
-//				.permitAll()
-//				.anyRequest()
-//				.authenticated()
+				.and()
+				.authorizeRequests()
+				.antMatchers("/oauth/**", "/oauth2/callback")
+				.permitAll()
+				.anyRequest()
+				.authenticated()
 				.and()
 				.formLogin()
+					.defaultSuccessUrl("/v1/users")
+					.permitAll()
+					.and()
+				.logout()
 				.and()
 				.httpBasic();
 	}
